@@ -1,7 +1,7 @@
 ///***************************************************************************
-// File:				GENERIC.H
+// File:				DellesteExpectation.H
 //
-// Purpose:			Header file for Generic.c
+// Purpose:			Header file for DellesteExpectation.c
 // 
 // Platform:    Microsoft Windows
 //

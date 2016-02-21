@@ -8,7 +8,7 @@ GENERICDIR=	.
 GENERICBUILDDIR = $(GENERICDIR)\$(TYPE)
 PREVDIR = .\..
 TARGETLIBDIR = $(PREVDIR)\$(SDKDIR)\lib
-DLLDEF_FLAGS = -def:$(PREVDIR)\generic.def
+DLLDEF_FLAGS = -def:$(PREVDIR)\DellesteExpectation.def
 !else
 GENERICBUILDDIR = $(GENERICDIR)\$(PLATFORM)\$(TYPE)
 PREVDIR = .\..\..
@@ -18,7 +18,7 @@ DLLDEF_FLAGS =
 TARGETINCDIR = $(SDKDIR)\include
 TARGETSRCDIR = $(SDKDIR)\src
 
-PROJ = GENERIC
+PROJ = DellesteExpectation
 
 COPY=copy /Y
 
@@ -54,8 +54,8 @@ GENERIC_DEFINES  = /D"WIN32" /D"_WINDOWS" /D"_MBCS" /D"_USRDLL" /D"GENERIC_EXPOR
 GENERIC_DEFINES  = /D"WIN32" /D"_WINDOWS" /D"_MBCS" /D"_USRDLL" /D"GENERIC_EXPORTS" /D "NDEBUG"
 !endif
 
-GENERIC_OBJ =	"GENERIC.obj" \
-	"GENERIC.res"
+GENERIC_OBJ =	"DellesteExpectation.obj" \
+	"DellesteExpectation.res"
 
 .SUFFIXES:	.cpp .c .obj
 
@@ -93,6 +93,6 @@ TARGET_DELIVER: "$(GENERICBUILDDIR)" $(GENERIC_OBJ)
 .c.obj:
 	$(CPP) /nologo $(CPPFLAGS) $(GENERIC_INCLUDE) $(GENERIC_DEFINES) /c $<	
 	
-GENERIC.res: $(GENERICDIR)\GENERIC.rc
-	$(RC) $(RCOPTS) /d "NDEBUG" /Fo"$(GENERICBUILDDIR)\GENERIC.res" $(GENERIC_INCLUDE) GENERIC.rc
+DellesteExpectation.res: $(GENERICDIR)\DellesteExpectation.rc
+	$(RC) $(RCOPTS) /d "NDEBUG" /Fo"$(GENERICBUILDDIR)\DellesteExpectation.res" $(GENERIC_INCLUDE) DellesteExpectation.rc
 	

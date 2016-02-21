@@ -1,31 +1,31 @@
 ///***************************************************************************
-// File:        GENERIC.C
+// File:        DellesteExpectation.C
 //
 // Purpose:     Template for creating XLLs for Microsoft Excel.
 //
-//              This file contains sample code you can use as 
+//              This file contains a code you can use as 
 //              a template for writing your own Microsoft Excel XLLs. 
 //              An XLL is a DLL that stands alone, that is, you
 //              can open it by choosing the Open command from the
 //              File menu. This code demonstrates many of the features 
 //              of the Microsoft Excel C API.
 //              
-//              When you open GENERIC.XLL, it
-//              creates a new Generic menu with four
+//              When you open DellesteExpectation.XLL, it
+//              creates a new DellesteExpectation menu with four
 //              commands:
 //              
 //                  Dialog...          displays a Microsoft Excel dialog box
 //                  Dance              moves the selection around
 //                                     until you press ESC
 //                  Native Dialog...   displays a Windows dialog box
-//                  Exit               Closes GENERIC.XLL and
+//                  Exit               Closes DellesteExpectation.XLL and
 //                                     removes the menu
 //              
-//              GENERIC.XLL also provides three functions,
+//              DellesteExpectation.XLL also provides three functions,
 //              Func1, FuncSum and FuncFib, which can be used whenever
-//              GENERIC.XLL is open. 
+//              DellesteExpectation.XLL is open. 
 //              
-//              GENERIC.XLL can also be added with the
+//              DellesteExpectation.XLL can also be added with the
 //              Add-in Manager.
 //              
 //              This file uses the framework library
@@ -63,7 +63,7 @@
 #include <windows.h>
 #include <xlcall.h>
 #include <framewrk.h>
-#include <generic.h>
+#include <DellesteExpectation.h>
 
 //
 // Later, the instance handle is required to create dialog boxes.
@@ -109,7 +109,7 @@ static LPWSTR g_rgWorksheetFuncs
 		L"Func1",                               // function_text
 		L"Arg",                                 // argument_text
 		L"1",                                   // macro_type
-		L"Generic Add-In",                      // category
+		L"DellesteExpectation Add-In",          // category
 		L"",                                    // shortcut_text
 		L"",                                    // help_topic
 		L"Always returns the string 'Func1'",   // function_help
@@ -121,7 +121,7 @@ static LPWSTR g_rgWorksheetFuncs
 		L"FuncSum",
 		L"number1,number2,...",
 		L"1",
-		L"Generic Add-In",
+		L"DellesteExpectation Add-In",
 		L"",                                    
 		L"",                                  
 		L"Adds the arguments",   
@@ -132,7 +132,7 @@ static LPWSTR g_rgWorksheetFuncs
 		L"FuncFib",
 		L"Compute to...",
 		L"1",
-		L"Generic Add-In",
+		L"DellesteExpectation Add-In",
 		L"",
 		L"",
 		L"Number to compute to"
@@ -161,7 +161,7 @@ static LPWSTR g_rgCommandFuncs[g_rgCommandFuncsRows][g_rgCommandFuncsCols] =
 		L"fDialog",             // function_text
 		L"",                    // argument_text
 		L"2",                   // macro_type
-		L"Generic Add-In",      // category
+		L"DellesteExpectation Add-In",  // category
 		L"l"                    // shortcut_text
 	},
 	{ L"fDance",
@@ -169,7 +169,7 @@ static LPWSTR g_rgCommandFuncs[g_rgCommandFuncsRows][g_rgCommandFuncsCols] =
 		L"fDance",
 		L"",
 		L"2",
-		L"Generic Add-In",
+		L"DellesteExpectation Add-In",
 		L"m"
 	},
 	{ L"fShowDialog",
@@ -177,14 +177,14 @@ static LPWSTR g_rgCommandFuncs[g_rgCommandFuncsRows][g_rgCommandFuncsCols] =
 		L"fShowDialog",
 		L"",
 		L"2",
-		L"Generic Add-In",
+		L"DellesteExpectation Add-In",
 		L"n"},
 	{ L"fExit",
 		L"A",
 		L"fExit",
 		L"",
 		L"2",
-		L"Generic Add-In",
+		L"DellesteExpectation Add-In",
 		L"o"
 	},
 };
@@ -192,7 +192,7 @@ static LPWSTR g_rgCommandFuncs[g_rgCommandFuncsRows][g_rgCommandFuncsCols] =
 //
 // g_rgMenu
 //
-// This is a table describing the Generic drop-down menu. It is in
+// This is a table describing the DellesteExpectation drop-down menu. It is in
 // the same format as the Microsoft Excel macro language menu tables.
 // The first column contains the name of the menu or command, the
 // second column contains the function to be executed, the third
@@ -209,16 +209,16 @@ static LPWSTR g_rgCommandFuncs[g_rgCommandFuncsRows][g_rgCommandFuncsCols] =
 
 static LPWSTR g_rgMenu[g_rgMenuRows][g_rgMenuCols] =
 {
-	{L"&Generic",          L"",            L"",
-		L"The Generic XLL Add-In",         	L""},
+	{L"&DellesteExpectation",          L"",            L"",
+		L"The DellesteExpectation XLL Add-In",         	L""},
 	{L"&Dialog...",        L"fDialog",     L"",
-		L"Run a sample generic dialog",    	L""},
+		L"Run a DellesteExpectation dialog",    	L""},
 	{L"D&ance",            L"fDance",      L"",
 		L"Make the selection dance around",	L""},
 	{L"&Native Dialog...", L"fShowDialog", L"",
-		L"Run a sample native dialog",     	L""},
+		L"Run a native dialog",     	L""},
 	{L"E&xit",             L"fExit",       L"",
-		L"Close the Generic XLL",          	L""},
+		L"Close the DellesteExpectation XLL",          	L""},
 };
 
 //
@@ -252,7 +252,7 @@ static LPWSTR g_rgTool[g_rgToolRows][g_rgToolCols] =
 //
 // g_rgDialog
 //
-// This is a table describing the sample dialog box used in the fDialog()
+// This is a table describing the dialog box used in the fDialog()
 // function. Admittedly, it would be more efficient to use ints for
 // the first 5 columns, but that makes the code much more complicated.
 // Storing the text in string tables is another method that could be used.
@@ -269,7 +269,7 @@ static LPWSTR g_rgTool[g_rgToolRows][g_rgToolCols] =
 
 static LPWSTR g_rgDialog[g_rgDialogRows][g_rgDialogCols] =
 {
-	{L"\000",   L"\000",    L"\000",    L"\003494", L"\003210", L"\025Generic Sample Dialog", L"\000"},
+	{L"\000",   L"\000",    L"\000",    L"\003494", L"\003210", L"\025DellesteExpectation Dialog", L"\000"},
 	{L"\0011",  L"\003330", L"\003174", L"\00288",  L"\000",    L"\002OK",                    L"\000"},
 	{L"\0012",  L"\003225", L"\003174", L"\00288",  L"\000",    L"\006Cancel",                L"\000"},
 	{L"\0015",  L"\00219",  L"\00211",  L"\000",    L"\000",    L"\006&Name:",                L"\000"},
@@ -284,7 +284,7 @@ static LPWSTR g_rgDialog[g_rgDialogRows][g_rgDialogCols] =
 	{L"\00213", L"\000",    L"\000",    L"\000",    L"\000",    L"\010&BA / BS",              L"\0011"},
 	{L"\00213", L"\000",    L"\000",    L"\000",    L"\000",    L"\010&MA / MS",              L"\0011"},
 	{L"\00213", L"\000",    L"\000",    L"\000",    L"\000",    L"\021&PhD / Other Grad",     L"\0010"},
-	{L"\00215", L"\00219",  L"\00299",  L"\003160", L"\00296",  L"\015GENERIC_List1",         L"\0011"},
+	{L"\00215", L"\00219",  L"\00299",  L"\003160", L"\00296",  L"\015DellesteExpectation_List1",         L"\0011"},
 };
 
 ///***************************************************************************
@@ -438,8 +438,8 @@ __declspec(dllexport) int WINAPI xlAutoOpen(void)
 	}
 
 	//
-	// In the following block of code, the Generic drop-down menu is created.
-	// Before creation, a check is made to determine if Generic already
+	// In the following block of code, the DellesteExpectation drop-down menu is created.
+	// Before creation, a check is made to determine if DellesteExpectation already
 	// exists. If not, it is added. If the menu needs to be added, memory is
 	// allocated to hold the array of menu items. The g_rgMenu[] table is then
 	// transferred into the newly created array. The array is passed as an
@@ -454,7 +454,7 @@ __declspec(dllexport) int WINAPI xlAutoOpen(void)
 	// functions are part of the framework library.
 	//
 
-	Excel12f(xlfGetBar, &xTest, 3, TempInt12(10), TempStr12(L"Generic"), TempInt12(0));
+	Excel12f(xlfGetBar, &xTest, 3, TempInt12(10), TempStr12(L"DellesteExpectation"), TempInt12(0));
 
 	if (xTest.xltype == xltypeErr)
 	{
@@ -551,10 +551,10 @@ __declspec(dllexport) int WINAPI xlAutoOpen(void)
 //
 //      xlAutoClose is called by the Add-in Manager when you remove this XLL from
 //      the list of loaded add-ins. The Add-in Manager first calls xlAutoRemove,
-//      then calls UNREGISTER("GENERIC.XLL"), which in turn calls xlAutoClose.
+//      then calls UNREGISTER("DellesteExpectation.XLL"), which in turn calls xlAutoClose.
 // 
-//      xlAutoClose is called by GENERIC.XLL by the function fExit. This function
-//      is called when you exit Generic.
+//      xlAutoClose is called by DellesteExpectation.XLL by the function fExit. This function
+//      is called when you exit DellesteExpectation.
 // 
 //      xlAutoClose should:
 // 
@@ -590,7 +590,7 @@ __declspec(dllexport) int WINAPI xlAutoClose(void)
 
 	//
 	// This block first deletes all names added by xlAutoOpen or
-	// xlAutoRegister12. Next, it checks if the drop-down menu Generic still
+	// xlAutoRegister12. Next, it checks if the drop-down menu DellesteExpectation still
 	// exists. If it does, it is deleted using xlfDeleteMenu. It then checks
 	// if the Test toolbar still exists. If it is, xlfDeleteToolbar is
 	// used to delete it.
@@ -612,11 +612,11 @@ __declspec(dllexport) int WINAPI xlAutoClose(void)
 	//
 	// Everything else works as documented
 	//
-	Excel12f(xlfGetBar, &xRes, 3, TempInt12(10), TempStr12(L"Generic"), TempInt12(0));
+	Excel12f(xlfGetBar, &xRes, 3, TempInt12(10), TempStr12(L"DellesteExpectation"), TempInt12(0));
 
 	if (xRes.xltype != xltypeErr)
 	{
-		Excel12f(xlfDeleteMenu, 0, 2, TempNum12(10), TempStr12(L"Generic"));
+		Excel12f(xlfDeleteMenu, 0, 2, TempNum12(10), TempStr12(L"DellesteExpectation"));
 
 		// Free the XLOPER12 returned by xlfGetBar //
 		Excel12f(xlFree, 0, 1, (LPXLOPER12) &xRes);
@@ -800,7 +800,7 @@ __declspec(dllexport) int WINAPI xlAutoAdd(void)
 {
 	XCHAR szBuf[255];
 
-	wsprintfW((LPWSTR)szBuf, L"Thank you for adding GENERIC.XLL\n "
+	wsprintfW((LPWSTR)szBuf, L"Thank you for adding DellesteExpectation.XLL\n "
 			 L"built on %hs at %hs", __DATE__, __TIME__);
 
 	// Display a dialog box indicating that the XLL was successfully added //
@@ -815,7 +815,7 @@ __declspec(dllexport) int WINAPI xlAutoAdd(void)
 //
 //      This function is called by the Add-in Manager only. When you remove
 //      an XLL from the list of active add-ins, the Add-in Manager calls
-//      xlAutoRemove() and then UNREGISTER("GENERIC.XLL").
+//      xlAutoRemove() and then UNREGISTER("DellesteExpectation.XLL").
 //   
 //      You can use this function to perform any special tasks that need to be
 //      performed when you remove the XLL from the Add-in Manager's list
@@ -836,7 +836,7 @@ __declspec(dllexport) int WINAPI xlAutoAdd(void)
 __declspec(dllexport) int WINAPI xlAutoRemove(void)
 {
 	// Show a dialog box indicating that the XLL was successfully removed //
-	Excel12f(xlcAlert, 0, 2, TempStr12(L"Thank you for removing GENERIC.XLL!"),
+	Excel12f(xlcAlert, 0, 2, TempStr12(L"Thank you for removing DellesteExpectation.XLL!"),
 		  TempInt12(2));
 	return 1;
 }
@@ -885,7 +885,7 @@ __declspec(dllexport) LPXLOPER12 WINAPI xlAddInManagerInfo12(LPXLOPER12 xAction)
 	if (xIntAction.val.w == 1)
 	{
 		xInfo.xltype = xltypeStr;
-		xInfo.val.str = L"\022Generic Standalone DLL";
+		xInfo.val.str = L"\022DellesteExpectation Standalone DLL";
 	}
 	else
 	{
@@ -1378,7 +1378,7 @@ __declspec(dllexport) LPXLOPER12 WINAPI FuncSum(
 //
 // Purpose:
 //
-//      A sample function that computes the nth Fibonacci number.
+//      A function that computes the nth Fibonacci number.
 //      Features a call to several wrapper functions.
 //
 // Parameters:
@@ -1569,10 +1569,10 @@ __declspec(dllexport) int WINAPI fDialog(void)
 	// This block first allocates memory to hold the dialog box array. It then
 	// fills this array with information from g_rgDialog[]. It replaces any
 	// empty entries with NIL XLOPERs while filling the array. It then
-	// creates the name "GENERIC_List1"to refer to an array containing the
+	// creates the name "DellesteExpectation_List1"to refer to an array containing the
 	// list box values. The dialog box is then displayed. The dialog box is
 	// redisplayed using the results from the last dialog box. Then the arrays
-	// are freed and the name "GENERIC_List1"is deleted.
+	// are freed and the name "DellesteExpectation_List1"is deleted.
 	//
 
 	px = prgrgx = (LPXLOPER12) GlobalLock(hrgrgx = 
@@ -1614,7 +1614,7 @@ __declspec(dllexport) int WINAPI fDialog(void)
 	xList.val.array.rows = 5;
 	xList.val.array.columns = 1;
 
-	Excel12f(xlfSetName, 0, 2, TempStr12(L"GENERIC_List1"), (LPXLOPER12) &xList);
+	Excel12f(xlfSetName, 0, 2, TempStr12(L"DellesteExpectation_List1"), (LPXLOPER12) &xList);
 
 	//Create the dialog box
 
@@ -1635,7 +1635,7 @@ __declspec(dllexport) int WINAPI fDialog(void)
 	GlobalUnlock(hrgrgx);
 	GlobalFree(hrgrgx);
 
-	Excel12f(xlfSetName, 0, 1, TempStr12(L"GENERIC_List1"));
+	Excel12f(xlfSetName, 0, 1, TempStr12(L"DellesteExpectation_List1"));
 
 	return 1;
 }
@@ -1646,8 +1646,8 @@ __declspec(dllexport) int WINAPI fDialog(void)
 //
 // Purpose:
 //
-//      This is a user-initiated routine to exit GENERIC.XLL You may be tempted to
-//      simply call UNREGISTER("GENERIC.XLL") in this function. Don't do it! It
+//      This is a user-initiated routine to exit DellesteExpectation.XLL You may be tempted to
+//      simply call UNREGISTER("DellesteExpectation.XLL") in this function. Don't do it! It
 //      will have the effect of forcefully unregistering all of the functions in
 //      this DLL, even if they are registered somewhere else! Instead, unregister
 //      the functions one at a time.

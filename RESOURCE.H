@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by GENERIC.RC
+// Used by DellesteExpectation.RC
 //
 
 // Next default values for new objects

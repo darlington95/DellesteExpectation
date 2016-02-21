@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="GENERIC"
-	ProjectGUID="{2CCCC998-F2A6-4D76-A05D-A432CD8F285A}"
+	Name="DellesteExpectation"
+	ProjectGUID="{D2727AFD-898A-4FE9-A3DB-96E8A828BE55}"
 	RootNamespace="make"
 	Keyword="MakeFileProj"
 	TargetFrameworkVersion="0"
@@ -109,7 +109,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\GENERIC.C"
+				RelativePath=".\DellesteExpectation.C"
 				>
 			</File>
 			<File
@@ -123,7 +123,7 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath=".\GENERIC.H"
+				RelativePath=".\DellesteExpectation.H"
 				>
 			</File>
 		</Filter>
@@ -133,11 +133,11 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
-				RelativePath=".\GENERIC.DEF"
+				RelativePath=".\DellesteExpectation.DEF"
 				>
 			</File>
 			<File
-				RelativePath=".\GENERIC.RC"
+				RelativePath=".\DellesteExpectation.RC"
 				>
 			</File>
 		</Filter>

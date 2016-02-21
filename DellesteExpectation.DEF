@@ -1,10 +1,10 @@
 ;***************************************************************************
-; File: Generic.def
+; File: DellesteExpectation.def
 ;
-; Purpose: Definition file for Generic.xll project
+; Purpose: Definition file for DellesteExpectation.xll project
 ;***************************************************************************
 
-LIBRARY GENERIC.XLL
+LIBRARY DellesteExpectation.XLL
 
 EXPORTS
 	xlAutoOpen
