@@ -1,0 +1,31 @@
+@echo off
+if not "%VCINSTALLDIR%" == "" goto L1
+set VCINSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\
+:L1
+
+if "%1" == "clean" goto clean
+
+:all
+pushd ..\..\SAMPLES
+call MAKE RELEASE BUILD X86
+popd
+echo ----------------------------
+echo DellesteExpectation
+echo ----------------------------
+SET TYPE=RELEASE
+SET PLATFORM=x86
+call "%VCINSTALLDIR%\vcvarsall.bat" x86
+nmake -f makefile all
+goto eof
+
+:clean
+pushd ..\..\SAMPLES
+call MAKE RELEASE CLEAN X86
+popd
+SET TYPE=RELEASE
+SET PLATFORM=x86
+call "%VCINSTALLDIR%\vcvarsall.bat" x86
+nmake -f makefile clean
+goto eof
+
+:eof
