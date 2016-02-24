@@ -11,16 +11,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
+[Dd][Ee][Bb][Uu][Gg]/
+[Dd][Ee][Bb][Uu][Gg][Pp][Uu][Bb][Ll][Ii][Cc]/
+[Rr][Ee][Ll][Ee][Aa][Ss][Ee]/
+[Rr][Ee][Ll][Ee][Aa][Ss][Ee][Ss]/
+[Xx]64/
+[Xx]86/
+[Bb][Uu][Ii][Ll][Dd]/
+[Bb][Ll][Dd]/
+[Bb][Ii][Nn]/
+[Oo][Bb][Jj]/
 
 # Visual Studio 2015 cache/options directory
 .vs/
