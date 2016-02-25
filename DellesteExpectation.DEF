@@ -1,0 +1,22 @@
+;***************************************************************************
+; File: DellesteExpectation.def
+;
+; Purpose: Definition file for DellesteExpectation.xll project
+;***************************************************************************
+
+LIBRARY DellesteExpectation.XLL
+
+EXPORTS
+	xlAutoOpen
+	xlAutoClose
+	xlAutoRegister12
+	xlAutoAdd
+	xlAutoRemove
+	xlAddInManagerInfo12
+	fShowDialog
+	Func1
+	FuncSum
+	fDance
+	fDialog
+	fExit
+	FuncFib
