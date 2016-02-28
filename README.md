@@ -1,2 +1,8 @@
-# DellesteExpectation
-Excel関数 デレステの特技期待値 XLLアドイン
+#Excel関数 デレステの特技期待値 XLLアドイン
+**ただいま開発中**
+
+* デレステで発動率を考慮した特技の期待値を求める関数をExcelに追加します。  
+* アイドル5人分のパラメータを与えると、期待値を返す関数を作りたいと思います。  
+
+デレステ つまり [アイドルマスター シンデレラガールズ スターライトステージ](http://cinderella.idolmaster.jp/sl-stage/) も他のゲームのように特技は発動率の影響を受けますが、デレステの特技は強位優先の考慮が必要ですから期待値は複雑な計算となります。スコア、コンボ、スタミナのジャンル毎で、同種の複数の特技が同時に発動する場合は強い方のみが効果を発揮します。特技発動の機会は周期的ですが、特技によって周期が異なり、特技Lvによっても変化します。そこで、楽曲の時間経過にそって0.1秒刻みで発動率を重ねあわせ、期待値の変化を求め、これの平均により最終的な評価としての期待値を求めたいと思います。 詳しくは [Wiki へ](https://github.com/darlington95/DellesteExpectation/wiki "Wiki")  
+![コンセプトの図](https://github.com/darlington95/DellesteExpectation/wiki/images/concept0.png "concept") 

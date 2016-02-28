@@ -57,6 +57,7 @@
 //
 ///***************************************************************************
 
+#if !defined(CONFIG_UNIT_TEST)
 //
 // Includes
 //
@@ -1700,3 +1701,4 @@ __declspec(dllexport) int WINAPI fExit(void)
 
 	return xlAutoClose();
 }
+#endif // CONFIG_UNIT_TEST
