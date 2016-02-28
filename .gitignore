@@ -10,6 +10,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# contrib
+[Cc][Oo][Nn][Tt][Rr][Ii][Bb]
+
 # Build results
 [Dd][Ee][Bb][Uu][Gg]/
 [Dd][Ee][Bb][Uu][Gg][Pp][Uu][Bb][Ll][Ii][Cc]/
@@ -210,3 +213,4 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/UnitTest/
