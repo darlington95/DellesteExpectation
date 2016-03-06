@@ -65,6 +65,7 @@
 #include <xlcall.h>
 #include <framewrk.h>
 #include <DellesteExpectation.h>
+#include <c_gate.h>
 
 //
 // Later, the instance handle is required to create dialog boxes.
@@ -398,6 +399,14 @@ __declspec(dllexport) int WINAPI xlAutoOpen(void)
 	HANDLE   hMenu;		   // global memory holding menu //
 	HANDLE  hTool;		   // global memory holding toolbar //
 
+	////////////////////////////////////////////////////////
+	// initialize cpp modules
+	DellesteExpectation_Init();
+	////////////////////////////////////////////////////////
+	// cpp call check
+	DellesteExpectation_Check();
+	////////////////////////////////////////////////////////
+
 	//
 	// In the following block of code the name of the XLL is obtained by
 	// calling xlGetName. This name is used as the first argument to the
@@ -632,6 +641,11 @@ __declspec(dllexport) int WINAPI xlAutoClose(void)
 		// Free the XLOPER12 returned by xlfGetToolbar //
 		Excel12f(xlFree, 0, 1, (LPXLOPER12) &xRes);
 	}
+
+	////////////////////////////////////////////////////////
+	// terminate cpp modules
+	DellesteExpectation_End();
+	////////////////////////////////////////////////////////
 
 	return 1;
 }

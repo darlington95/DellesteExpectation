@@ -13,6 +13,9 @@
 # contrib
 [Cc][Oo][Nn][Tt][Rr][Ii][Bb]
 
+# md viewer work file
+*.md.html
+
 # Build results
 [Dd][Ee][Bb][Uu][Gg]/
 [Dd][Ee][Bb][Uu][Gg][Pp][Uu][Bb][Ll][Ii][Cc]/

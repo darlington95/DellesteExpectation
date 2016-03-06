@@ -17,6 +17,8 @@ DLLDEF_FLAGS =
 !endif
 TARGETINCDIR = $(SDKDIR)\include
 TARGETSRCDIR = $(SDKDIR)\src
+CPPDIR = $(GENERICDIR)\cppgen
+CPPPKGDIR = $(GENERICDIR)\cppgen\DellesteExpectation
 
 PROJ = DellesteExpectation
 
@@ -35,6 +37,7 @@ all : TARGET_DELIVER
 GENERIC_BINARY   = $(PROJ).xll
 GENERIC_PDB	 = $(GENERICBUILDDIR)\$(PROJ).pdb     
 GENERIC_INCLUDE  = /I"$(GENERICDIR)" /I"$(TARGETINCDIR)" /I"$(TARGETSRCDIR)"
+CPP_INCLUDE  = /I"$(CPPDIR)" /I"$(CPPPKGDIR)"
 
 !if "$(TYPE)" == "DEBUG"
 GENERIC_LIBS = msvcrtd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib $(TARGETLIBDIR)\Frmwrk32.lib $(TARGETLIBDIR)\xlcall32.lib
@@ -56,6 +59,12 @@ GENERIC_DEFINES  = /D"WIN32" /D"_WINDOWS" /D"_MBCS" /D"_USRDLL" /D"GENERIC_EXPOR
 
 GENERIC_OBJ =	"DellesteExpectation.obj" \
 	"DellesteExpectation.res"
+
+CPP_OBJ = "$(CPPDIR)\c_gate.obj" \
+	"$(CPPPKGDIR)\cpp_check.obj"
+
+CPP_OBJ_FILES = "c_gate.obj" \
+	"cpp_check.obj"
 
 .SUFFIXES:	.cpp .c .obj
 
@@ -82,16 +91,16 @@ clean:
 "$(GENERICBUILDDIR)":
 	if not exist "$(GENERICBUILDDIR)" mkdir "$(GENERICBUILDDIR)"
 
-TARGET_DELIVER: "$(GENERICBUILDDIR)" $(GENERIC_OBJ)
+TARGET_DELIVER: "$(GENERICBUILDDIR)" $(GENERIC_OBJ) $(CPP_OBJ)
 	cd $(GENERICBUILDDIR)
-	link.exe /DLL /manifest /nologo $(GENERIC_OBJ) $(GENERIC_LIB_OPTS) $(GENERIC_LIBS)
+	link.exe /DLL /manifest /nologo $(GENERIC_OBJ) $(CPP_OBJ_FILES) $(GENERIC_LIB_OPTS) $(GENERIC_LIBS)
 	mt.exe /nologo /outputresource:"$(GENERIC_BINARY);#2" /manifest "$(GENERIC_BINARY).manifest"
 	
 .cpp.obj:
-	$(CPP) /nologo $(CPPFLAGS) $(GENERIC_INCLUDE) $(GENERIC_DEFINES) /c $<
+	$(CPP) /nologo $(CPPFLAGS) $(GENERIC_INCLUDE) $(CPP_INCLUDE) $(GENERIC_DEFINES) /c $<
 
 .c.obj:
-	$(CPP) /nologo $(CPPFLAGS) $(GENERIC_INCLUDE) $(GENERIC_DEFINES) /c $<	
+	$(CPP) /nologo $(CPPFLAGS) $(GENERIC_INCLUDE) $(CPP_INCLUDE) $(GENERIC_DEFINES) /c $<	
 	
 DellesteExpectation.res: $(GENERICDIR)\DellesteExpectation.rc
 	$(RC) $(RCOPTS) /d "NDEBUG" /Fo"$(GENERICBUILDDIR)\DellesteExpectation.res" $(GENERIC_INCLUDE) DellesteExpectation.rc

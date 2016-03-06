@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:C_Cpp="http://www.eclipse.org/papyrus/C_Cpp/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_mRBpkOCFEeWobocTHfV6VA" name="DellesteExpectation">
+    <packagedElement xmi:type="uml:Package" xmi:id="_-XGwIOEyEeWImPTfAInaRw" name="Microsoft Excel">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_eVRTUONLEeWFQY1LS4pM_g" importedPackage="_mRBpkOCFEeWobocTHfV6VA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-0Z6sOEzEeWImPTfAInaRw" name="XLL SDK"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_NilzkOM7EeW5WN1Qx-eaew" name="c_gate">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_O5pGEOM7EeW5WN1Qx-eaew" name="DellesteExpectation_Check">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_YuV4UONREeWFQY1LS4pM_g" type="_FM4q4ONREeWFQY1LS4pM_g" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yKaFAOM7EeW5WN1Qx-eaew" name="cpp_check">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_YR3ncONAEeW1JvgAikT93Q" name="ret_true" specification="__DDLYOM7EeW5WN1Qx-eaew">
+        <language>C++</language>
+        <body>return true;</body>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="__DDLYOM7EeW5WN1Qx-eaew" name="check" method="_YR3ncONAEeW1JvgAikT93Q">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_44Y7wONCEeW1JvgAikT93Q" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_t_6IkOM9EeW1JvgAikT93Q" name="function call" client="_NilzkOM7EeW5WN1Qx-eaew" supplier="_yKaFAOM7EeW5WN1Qx-eaew"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_geRnMONLEeWFQY1LS4pM_g" name="use" client="_mRBpkOCFEeWobocTHfV6VA" supplier="_-0Z6sOEzEeWImPTfAInaRw"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_FM4q4ONREeWFQY1LS4pM_g" name="bool"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_mR7ogOCFEeWobocTHfV6VA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mR7ogeCFEeWobocTHfV6VA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/C_Cpp/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusC_Cpp_PROFILES/C_Cpp.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+  </uml:Model>
+  <C_Cpp:NoCodeGen xmi:id="_N0HQsOEzEeWImPTfAInaRw" base_element="_-XGwIOEyEeWImPTfAInaRw"/>
+  <C_Cpp:ExternLibrary xmi:id="_CjmJQOE0EeWImPTfAInaRw" base_package="_-0Z6sOEzEeWImPTfAInaRw"/>
+  <C_Cpp:ManualGeneration xmi:id="_pEmFIOM9EeW1JvgAikT93Q" base_Class="_NilzkOM7EeW5WN1Qx-eaew"/>
+</xmi:XMI>

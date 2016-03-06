@@ -122,6 +122,8 @@ nmake -f makefile clean</NMakeCleanCommandLine>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cppgen\c_gate.cpp" />
+    <ClCompile Include="cppgen\DellesteExpectation\cpp_check.cpp" />
     <ClCompile Include="DellesteExpectation.C" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +131,9 @@ nmake -f makefile clean</NMakeCleanCommandLine>
     <None Include="makefile" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cppgen\c_gate.h" />
+    <ClInclude Include="cppgen\DellesteExpectation\cpp_check.h" />
+    <ClInclude Include="cppgen\DellesteExpectation\Pkg_DellesteExpectation.h" />
     <ClInclude Include="DellesteExpectation.H" />
   </ItemGroup>
   <ItemGroup>
