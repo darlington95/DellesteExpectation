@@ -27,6 +27,7 @@
 								<option id="gnu.cpp.compiler.cygwin.exe.debug.option.optimization.level.966339556" name="Optimization Level" superClass="gnu.cpp.compiler.cygwin.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.cygwin.exe.debug.option.debugging.level.1046716000" name="Debug Level" superClass="gnu.cpp.compiler.cygwin.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1945392198" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cppgen}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/contrib/googletest}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/contrib/googletest/include}&quot;"/>
 								</option>
@@ -49,16 +50,6 @@
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-						</toolChain>
-					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.1759313311.1957272311" name="/" resourcePath="test">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.exe.debug.115208146" name="Cygwin GCC" superClass="cdt.managedbuild.toolchain.gnu.cygwin.exe.debug" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.debug.219063638" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.debug.879202636"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.1952870769" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base.1226632890"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.debug.1665527070" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.debug.78683494"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.977455524" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.945307408"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.debug.2024513116" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.debug.539601495"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.1182378637" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.debug.1093726770"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -109,16 +100,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.10608788.1517548855" name="/" resourcePath="test">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.exe.release.321405772" name="Cygwin GCC" superClass="cdt.managedbuild.toolchain.gnu.cygwin.exe.release" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.release.1749710701" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.release.991126370"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.2025354142" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base.601122099"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.51047899" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.1843311317"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.9387274" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.968079265"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.release.2014139744" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.release.41525831"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.release.2022846446" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.release.1482865070"/>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
 						<entry excluding="test|contrib/googletest" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -165,16 +146,6 @@
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-						</toolChain>
-					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.10608788.1930658079.1303223314" name="/" resourcePath="test">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.exe.release.1052322343" name="Cygwin GCC" superClass="cdt.managedbuild.toolchain.gnu.cygwin.exe.release" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.release.1484321672" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.exe.release.358063367"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.1120159127" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base.1449901772"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.1952149541" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.2127906659"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.1016744048" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.568900433"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.release.148223813" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.exe.release.44564932"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.release.2024895542" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.exe.release.1738328553"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>

@@ -18,6 +18,12 @@
     <ClCompile Include="DellesteExpectation.C">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cppgen\c_gate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cppgen\DellesteExpectation\cpp_check.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="makefile">
@@ -29,6 +35,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DellesteExpectation.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cppgen\c_gate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cppgen\DellesteExpectation\cpp_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cppgen\DellesteExpectation\Pkg_DellesteExpectation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
